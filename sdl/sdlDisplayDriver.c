@@ -93,7 +93,6 @@ void SDD_Name(Host_PollDisplay)(ARMul_State *state)
          break;
 
       case SDL_MOUSEMOTION:
-         printf("Mouse motion: %d, %d\n", event.motion.xrel, event.motion.yrel);
          sdlMouseInfo.xDiff = event.motion.xrel;
          sdlMouseInfo.yDiff = event.motion.yrel;
          sdlMouseInfo.mouseMoved = true;
@@ -105,7 +104,6 @@ void SDD_Name(Host_PollDisplay)(ARMul_State *state)
          sdlMouseInfo.buttonIndex = event.button.button;
          sdlMouseInfo.UpNDown = (event.button.state == SDL_RELEASED) ? true : false;
          sdlMouseInfo.buttonChanged = true;
-         printf("Mouse button event: %d, %d\n", sdlMouseInfo.buttonIndex, sdlMouseInfo.UpNDown);
          break;
 
       default:
@@ -163,7 +161,6 @@ SDD_HostColour SDD_Name(Host_GetColour)(ARMul_State *state, uint_fast16_t col)
    int r = (col & 0x00f) << 4;
    int g = (col & 0x0f0);
    int b = (col & 0xf00) >> 4;
-   printf("Host_GetColour: %d %d %d\n", r, g, b);
 
    return r << 16 | g << 8 | b;
 }
@@ -309,8 +306,6 @@ void RefreshMouse(ARMul_State *state)
    PD.mouseX = HorizPos;
    PD.mouseY = VertPos;
    PD.mouseHeight = Height;
-
-   printf("HorizPos: %d, VertPos: %d, Height: %d\n", HorizPos, VertPos, Height);
 
    /* Cursor palette */
    cursorPal[0] = 0;
