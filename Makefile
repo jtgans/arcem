@@ -197,10 +197,10 @@ endif
 ifeq (${SYSTEM},sdl)
 CC = gcc
 LD = gcc
-CFLAGS += -DSYSTEM_sdl -I/usr/local/include/SDL2
+CFLAGS += -DSYSTEM_sdl $(shell pkg-config --cflags sdl2)
 #LDFLAGS += -s WASM=0
 OBJS += sdl/sdlDisplayDriver.o
-LIBS += -lSDL2 -L/usr/local/lib
+LIBS += $(shell pkg-config --libs sdl2)
 TARGET=arcem
 endif
 
