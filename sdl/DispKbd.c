@@ -29,6 +29,7 @@
 extern const DisplayDev sdl_DisplayDev;
 
 struct plat_display PD;
+struct SDLMouseInfo sdlMouseInfo;
 
 const int initialWindowWidth = 640;
 const int initialWindowHeight = 480;

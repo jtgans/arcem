@@ -60,7 +60,7 @@ struct SDLMouseInfo {
   bool buttonChanged;
 };
 
-struct SDLMouseInfo sdlMouseInfo;
+extern struct SDLMouseInfo sdlMouseInfo;
 
 // extern void Resize_Window(ARMul_State *state,int x,int y);
 
